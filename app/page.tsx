@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import Link from "next/link"
-import Image from "next/image"
+import { useRef } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Briefcase,
@@ -15,26 +15,32 @@ import {
   Linkedin,
   Mail,
   MapPin,
-} from "lucide-react"
-import { motion } from "framer-motion"
+} from "lucide-react";
+import { motion } from "framer-motion";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
   // Refs para animações de scroll
-  const experienceRef = useRef(null)
-  const skillsRef = useRef(null)
-  const projectsRef = useRef(null)
-  const aboutRef = useRef(null)
-  const contactRef = useRef(null)
+  const experienceRef = useRef(null);
+  const skillsRef = useRef(null);
+  const projectsRef = useRef(null);
+  const aboutRef = useRef(null);
+  const contactRef = useRef(null);
 
-  // Variantes de animação
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  }
+  };
 
   const staggerContainer = {
     hidden: { opacity: 0 },
@@ -44,12 +50,16 @@ export default function Home() {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const skillItem = {
     hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1, transition: { type: "spring", stiffness: 100 } },
-  }
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { type: "spring", stiffness: 100 },
+    },
+  };
 
   return (
     <div className="dark min-h-screen bg-[#0f0f13] text-white">
@@ -68,16 +78,28 @@ export default function Home() {
             <span className="font-bold tracking-tight">ruyter</span>
           </Link>
           <nav className="ml-auto flex items-center gap-6">
-            <Link href="#about" className="text-sm font-medium text-white/70 transition-colors hover:text-white">
+            <Link
+              href="#about"
+              className="text-sm font-medium text-white/70 transition-colors hover:text-white"
+            >
               Sobre
             </Link>
-            <Link href="#experience" className="text-sm font-medium text-white/70 transition-colors hover:text-white">
+            <Link
+              href="#experience"
+              className="text-sm font-medium text-white/70 transition-colors hover:text-white"
+            >
               Experiência
             </Link>
-            <Link href="#skills" className="text-sm font-medium text-white/70 transition-colors hover:text-white">
+            <Link
+              href="#skills"
+              className="text-sm font-medium text-white/70 transition-colors hover:text-white"
+            >
               Habilidades
             </Link>
-            <Link href="#projects" className="text-sm font-medium text-white/70 transition-colors hover:text-white">
+            <Link
+              href="#projects"
+              className="text-sm font-medium text-white/70 transition-colors hover:text-white"
+            >
               Projetos
             </Link>
             <Link href="#contact">
@@ -104,7 +126,11 @@ export default function Home() {
               <motion.div
                 className="inline-block mb-6 p-px rounded-full bg-gradient-to-r from-purple-500 to-cyan-500"
                 animate={{ rotate: [0, 5, 0, -5, 0] }}
-                transition={{ repeat: Number.POSITIVE_INFINITY, duration: 5, ease: "easeInOut" }}
+                transition={{
+                  repeat: Number.POSITIVE_INFINITY,
+                  duration: 5,
+                  ease: "easeInOut",
+                }}
               >
                 <div className="bg-[#0f0f13] rounded-full px-4 py-1 text-sm font-medium text-white">
                   Desenvolvedor Fullstack
@@ -116,10 +142,17 @@ export default function Home() {
               >
                 Criando experiências digitais que importam
               </motion.h1>
-              <motion.p className="mt-4 text-xl text-white/70" variants={fadeInUp}>
-                Desenvolvo aplicações web modernas e responsivas com código limpo e experiências de usuário intuitivas.
+              <motion.p
+                className="mt-4 text-xl text-white/70"
+                variants={fadeInUp}
+              >
+                Desenvolvo aplicações web modernas e responsivas com código
+                limpo e experiências de usuário intuitivas.
               </motion.p>
-              <motion.div className="mt-8 flex flex-wrap justify-center gap-4" variants={fadeInUp}>
+              <motion.div
+                className="mt-8 flex flex-wrap justify-center gap-4"
+                variants={fadeInUp}
+              >
                 <Button
                   asChild
                   className="bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90 transition-opacity"
@@ -128,7 +161,11 @@ export default function Home() {
                     Ver Projetos <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-                <Button variant="outline" asChild className="border-white/10 hover:bg-white/5 gap-2">
+                <Button
+                  variant="outline"
+                  asChild
+                  className="border-white/10 hover:bg-white/5 gap-2"
+                >
                   <Link href="/cv.pdf" target="_blank" download>
                     <Download className="h-4 w-4" /> Baixar CV
                   </Link>
@@ -166,12 +203,15 @@ export default function Home() {
                 <h2 className="text-3xl font-bold tracking-tight">Sobre Mim</h2>
                 <div className="mt-2 h-1 w-12 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500" />
                 <p className="mt-4 text-white/70">
-                  Sou um desenvolvedor fullstack com 3 anos de experiência, cursando Ciência da Computação. Trabalho com
-                  projetos freelance e tenho expertise em desenvolvimento web e sistemas escaláveis.
+                  Sou um desenvolvedor fullstack com 3 anos de experiência,
+                  cursando Ciência da Computação. Trabalho com projetos
+                  freelance e tenho expertise em desenvolvimento web e sistemas
+                  escaláveis.
                 </p>
                 <p className="mt-2 text-white/70">
-                  Sou comunicativo, proativo e foco em código limpo e soluções eficientes. Sempre atualizado com as
-                  melhores práticas do mercado, busco entregar resultados de alto impacto.
+                  Sou comunicativo, proativo e foco em código limpo e soluções
+                  eficientes. Sempre atualizado com as melhores práticas do
+                  mercado, busco entregar resultados de alto impacto.
                 </p>
                 <div className="mt-4 space-y-2 text-white/70">
                   <div className="flex items-center gap-2">
@@ -231,7 +271,9 @@ export default function Home() {
           <div className="container mx-auto px-4 md:px-6 max-w-7xl">
             <div className="mx-auto max-w-5xl">
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold tracking-tight">Experiência Profissional</h2>
+                <h2 className="text-3xl font-bold tracking-tight">
+                  Experiência Profissional
+                </h2>
                 <div className="mt-2 mx-auto h-1 w-12 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500" />
                 <p className="mt-4 text-white/70 max-w-2xl mx-auto">
                   Minha trajetória profissional e as empresas onde contribuí.
@@ -295,7 +337,11 @@ export default function Home() {
                     ],
                   },
                 ].map((experiencia, index) => (
-                  <motion.div key={index} variants={fadeInUp} className="relative pl-8 md:pl-0">
+                  <motion.div
+                    key={index}
+                    variants={fadeInUp}
+                    className="relative pl-8 md:pl-0"
+                  >
                     <div className="md:grid md:grid-cols-5 md:gap-8">
                       <div className="md:col-span-1 mb-4 md:mb-0 md:text-right md:pr-8">
                         <div className="flex items-center md:justify-end gap-2 text-white/70">
@@ -312,16 +358,26 @@ export default function Home() {
 
                         <div className="bg-white/5 rounded-lg border border-white/10 p-6 hover:bg-white/10 transition-colors">
                           <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
-                            <h3 className="text-xl font-bold">{experiencia.cargo}</h3>
+                            <h3 className="text-xl font-bold">
+                              {experiencia.cargo}
+                            </h3>
                             <div className="flex items-center gap-2">
                               <Briefcase className="h-4 w-4 text-purple-400" />
-                              <span className="text-white/70">{experiencia.empresa}</span>
+                              <span className="text-white/70">
+                                {experiencia.empresa}
+                              </span>
                             </div>
                           </div>
-                          <p className="text-white/70 mb-4">{experiencia.descricao}</p>
+                          <p className="text-white/70 mb-4">
+                            {experiencia.descricao}
+                          </p>
                           <div className="flex flex-wrap gap-2">
                             {experiencia.tecnologias.map((tech) => (
-                              <Badge key={tech} variant="outline" className="border-white/10 bg-white/5">
+                              <Badge
+                                key={tech}
+                                variant="outline"
+                                className="border-white/10 bg-white/5"
+                              >
                                 {tech}
                               </Badge>
                             ))}
@@ -337,7 +393,8 @@ export default function Home() {
                 <div className="inline-flex items-center gap-2 text-white/70">
                   <GraduationCap className="h-5 w-5 text-purple-400" />
                   <span className="font-medium">
-                    Formação: Bacharelado em Ciência da Computação - Gran Faculdade, 2024
+                    Formação: Bacharelado em Ciência da Computação - Gran
+                    Faculdade, 2024
                   </span>
                 </div>
               </div>
@@ -356,10 +413,13 @@ export default function Home() {
         >
           <div className="container mx-auto px-4 md:px-6 max-w-7xl">
             <div className="mx-auto max-w-5xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight">Habilidades & Tecnologias</h2>
+              <h2 className="text-3xl font-bold tracking-tight">
+                Habilidades & Tecnologias
+              </h2>
               <div className="mt-2 mx-auto h-1 w-12 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500" />
               <p className="mt-4 text-white/70 max-w-2xl mx-auto">
-                As ferramentas e tecnologias que utilizo para dar vida às ideias.
+                As ferramentas e tecnologias que utilizo para dar vida às
+                ideias.
               </p>
 
               <div className="mt-12 grid gap-8">
@@ -372,17 +432,24 @@ export default function Home() {
                     whileInView="visible"
                     viewport={{ once: true }}
                   >
-                    {["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML5", "CSS3", "JavaScript", "ShadcnUI"].map(
-                      (skill) => (
-                        <motion.div
-                          key={skill}
-                          variants={skillItem}
-                          className="flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-4 text-center hover:bg-white/10 transition-colors"
-                        >
-                          {skill}
-                        </motion.div>
-                      ),
-                    )}
+                    {[
+                      "React",
+                      "Next.js",
+                      "TypeScript",
+                      "Tailwind CSS",
+                      "HTML5",
+                      "CSS3",
+                      "JavaScript",
+                      "ShadcnUI",
+                    ].map((skill) => (
+                      <motion.div
+                        key={skill}
+                        variants={skillItem}
+                        className="flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-4 text-center hover:bg-white/10 transition-colors"
+                      >
+                        {skill}
+                      </motion.div>
+                    ))}
                   </motion.div>
                 </div>
 
@@ -423,7 +490,9 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-medium mb-4">Ferramentas & DevOps</h3>
+                  <h3 className="text-xl font-medium mb-4">
+                    Ferramentas & DevOps
+                  </h3>
                   <motion.div
                     className="grid grid-cols-2 sm:grid-cols-4 gap-3"
                     variants={staggerContainer}
@@ -470,7 +539,9 @@ export default function Home() {
         >
           <div className="container mx-auto px-4 md:px-6 max-w-7xl">
             <div className="mx-auto max-w-5xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight">Projetos em Destaque</h2>
+              <h2 className="text-3xl font-bold tracking-tight">
+                Projetos em Destaque
+              </h2>
               <div className="mt-2 mx-auto h-1 w-12 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500" />
               <p className="mt-4 text-white/70 max-w-2xl mx-auto">
                 Uma seleção dos meus trabalhos recentes e projetos pessoais.
@@ -486,7 +557,8 @@ export default function Home() {
                 {[
                   {
                     title: "Plataforma E-commerce - Haxteras",
-                    description: "Uma loja online completa com processamento de pagamentos e gerenciamento de estoque.",
+                    description:
+                      "Uma loja online completa com processamento de pagamentos e gerenciamento de estoque.",
                     tags: [
                       "Next.js",
                       "Node.js",
@@ -522,8 +594,17 @@ export default function Home() {
                   },
                   {
                     title: "Website Institucional",
-                    description: "Um website de institucional/e-commerce responsivo.",
-                    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Stripe", "ShadcnUI", "NeonDatabase"],
+                    description:
+                      "Um website de institucional/e-commerce responsivo.",
+                    tags: [
+                      "Next.js",
+                      "TypeScript",
+                      "Tailwind CSS",
+                      "Prisma",
+                      "Stripe",
+                      "ShadcnUI",
+                      "NeonDatabase",
+                    ],
                     gradient: "from-pink-500 to-orange-500",
                     link: "https://toquefino.shop",
                   },
@@ -539,7 +620,9 @@ export default function Home() {
                       </CardHeader>
                       <CardContent className="p-4 pt-0">
                         <CardTitle>{project.title}</CardTitle>
-                        <CardDescription className="mt-2 text-white/70">{project.description}</CardDescription>
+                        <CardDescription className="mt-2 text-white/70">
+                          {project.description}
+                        </CardDescription>
                       </CardContent>
                       <CardFooter className="flex flex-wrap justify-between items-center p-4 pt-0">
                         <div className="flex flex-wrap gap-1 my-2">
@@ -552,10 +635,16 @@ export default function Home() {
                             </span>
                           ))}
                         </div>
-                        <Button variant="ghost" size="sm" className="text-purple-400 hover:text-purple-300 p-0" asChild>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="text-purple-400 hover:text-purple-300 p-0"
+                          asChild
+                        >
                           <Link href={project.link}>
                             <span className="flex items-center gap-1">
-                              Ver projeto <ExternalLink className="h-3 w-3 ml-1" />
+                              Ver projeto{" "}
+                              <ExternalLink className="h-3 w-3 ml-1" />
                             </span>
                           </Link>
                         </Button>
@@ -589,10 +678,13 @@ export default function Home() {
                 <div className="relative p-8 md:p-12">
                   <div className="grid gap-8 md:grid-cols-2">
                     <div>
-                      <h2 className="text-3xl font-bold tracking-tight">Entre em Contato</h2>
+                      <h2 className="text-3xl font-bold tracking-tight">
+                        Entre em Contato
+                      </h2>
                       <div className="mt-2 h-1 w-12 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500" />
                       <p className="mt-4 text-white/70">
-                        Tem um projeto em mente ou quer discutir oportunidades? Adoraria ouvir de você.
+                        Tem um projeto em mente ou quer discutir oportunidades?
+                        Adoraria ouvir de você.
                       </p>
                       <div className="mt-6 space-y-4">
                         <div className="flex items-center gap-3">
@@ -616,9 +708,14 @@ export default function Home() {
                       </div>
 
                       <div className="mt-8">
-                        <Button variant="outline" className="border-white/10 hover:bg-white/5 gap-2" asChild>
+                        <Button
+                          variant="outline"
+                          className="border-white/10 hover:bg-white/5 gap-2"
+                          asChild
+                        >
                           <Link href="/cv.pdf" target="_blank" download>
-                            <Download className="h-4 w-4" /> Baixar Currículo Completo
+                            <Download className="h-4 w-4" /> Baixar Currículo
+                            Completo
                           </Link>
                         </Button>
                       </div>
@@ -664,8 +761,9 @@ export default function Home() {
                 <Code className="h-5 w-5 m-auto mt-1.5 text-white" />
               </div>
               <p className="text-sm text-white/70">
-                © {new Date().getFullYear()} <span className="font-medium text-white">Ruyter</span>. Todos os direitos
-                reservados.
+                © {new Date().getFullYear()}{" "}
+                <span className="font-medium text-white">Ruyter</span>. Todos os
+                direitos reservados.
               </p>
             </div>
             <div className="flex items-center gap-4">
@@ -685,7 +783,10 @@ export default function Home() {
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
-              <Link href="mailto:ruyter.dev@outlook.com" className="text-white/50 hover:text-white transition-colors">
+              <Link
+                href="mailto:ruyter.dev@outlook.com"
+                className="text-white/50 hover:text-white transition-colors"
+              >
                 <Mail className="h-5 w-5" />
                 <span className="sr-only">Email</span>
               </Link>
@@ -694,6 +795,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
-
